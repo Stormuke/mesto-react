@@ -1,56 +1,43 @@
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import React, {useEffect} from "react";
+import React from "react";
 import PopupWithForm from "./PopupWithForm";
-import api from "../utils/api";
 import ImagePopup from "./ImagePopup";
 
 
 function App() {
-    const [isEditProfilePopupOpen, setEditProfilePopupOpen] = React.useState()
-    const [isAddPlacePopupOpen, setAddPlacePopupOpen] = React.useState()
-    const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = React.useState()
-    const [selectedCard, setSelectedCard] = React.useState()
-    const [userInfo, setUserInfo] = React.useState({})
-    const [cards, setCards] = React.useState([])
-    useEffect(() => {
-        Promise.all([api.getUserInfo(), api.getInitialCards()])
-            .then(([profileInfo, card]) => {
-                setUserInfo(profileInfo)
-                setCards(card)
-            })
-            .catch((err) => {console.log(`Ошибка загрузки: ${err}`)})
-    }, [])
+    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState()
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState()
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState()
+    const [selectedCard, setSelectedCard] = React.useState(null)
 
     function handleCardClick(card) {
         setSelectedCard(card)
     }
 
     function handleEditAvatarClick() {
-        setEditAvatarPopupOpen(true)
+        setIsEditAvatarPopupOpen(true)
     }
 
     function handleEditProfileClick() {
-        setEditProfilePopupOpen(true)
+        setIsEditProfilePopupOpen(true)
     }
 
     function handleAddPlaceClick() {
-        setAddPlacePopupOpen(true)
+        setIsAddPlacePopupOpen(true)
     }
 
 
 
     function closeAllPopups() {
-        setEditAvatarPopupOpen(false)
-        setEditProfilePopupOpen(false)
-        setAddPlacePopupOpen(false)
+        setIsEditAvatarPopupOpen(false)
+        setIsEditProfilePopupOpen(false)
+        setIsAddPlacePopupOpen(false)
         setSelectedCard(null)
     }
 
   return (
-
-
       <div className="container">
       <>
           <Header/>
@@ -59,8 +46,6 @@ function App() {
               onEditProfile={handleEditProfileClick}
               onAddPlace={handleAddPlaceClick}
               onCardClick={handleCardClick}
-              cards={cards}
-              userInfo={userInfo}
           />
           <Footer/>
 
@@ -155,7 +140,6 @@ function App() {
                   </>
               )}
           />
-
       </>
       </div>
   );
