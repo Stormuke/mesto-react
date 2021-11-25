@@ -36,35 +36,32 @@ function AddPlacePopup(props) {
             title={'Новое место'}
             name={'add'}
             onSubmit={handleSubmit}
-            children={(
-                <>
-                    <input
-                        type="text"
-                        name="name"
-                        id="mesto_title"
-                        className="popup__text"
-                        placeholder="Название"
-                        minLength="2"
-                        maxLength="30"
-                        value={title}
-                        required
-                        onChange={handleAddTitle}
-                    />
-                    <span className="popup__text-error" id="mesto_title-error"/>
-                    <input
-                        type="url"
-                        name="link"
-                        className="popup__text"
-                        id="mesto_link"
-                        placeholder="Ссылка на картинку"
-                        required
-                        onChange={handleAddPhoto}
-                        value={link}
-                    />
-                    <span className="popup__text-error" id="mesto_link-error"/>
-                </>
-            )}
-        />
+            >
+            <input
+                type="text"
+                name="name"
+                id="mesto_title"
+                className="popup__text"
+                placeholder="Название"
+                minLength="2"
+                maxLength="30"
+                value={title}
+                required
+                onChange={handleAddTitle}
+            />
+            <span className="popup__text-error" id="mesto_title-error"/>
+            <input
+                type="url"
+                name="link"
+                className="popup__text"
+                id="mesto_link"
+                placeholder="Ссылка на картинку"
+                required
+                onChange={handleAddPhoto}
+                value={link}
+            />
+            <span className="popup__text-error" id="mesto_link-error"/>
+        </PopupWithForm>
     )
 }
 

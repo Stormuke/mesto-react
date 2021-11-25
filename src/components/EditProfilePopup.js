@@ -39,37 +39,34 @@ function EditProfilePopup(props) {
             form={'edit_profile'}
             title={'Редактировать профиль'}
             name={'edit'}
-            children={(
-                <>
-                    <input
-                        type="text"
-                        name="profile_name"
-                        className="popup__text"
-                        id="profile_name"
-                        placeholder="Имя"
-                        minLength="2"
-                        maxLength="40"
-                        onChange={changeName}
-                        required
-                        value={name}
-                    />
-                    <span className="popup__text-error" id="profile_name-error"/>
-                    <input
-                        type="text"
-                        name="profile_job"
-                        className="popup__text"
-                        id="profile_job"
-                        placeholder="Профессиональная деятельность"
-                        minLength="2"
-                        maxLength="200"
-                        onChange={changeDescription}
-                        required
-                        value={description}
-                    />
-                    <span className="popup__text-error" id="profile_job-error"/>
-                </>
-            )}
-        />
+            >
+            <input
+                type="text"
+                name="profile_name"
+                className="popup__text"
+                id="profile_name"
+                placeholder="Имя"
+                minLength="2"
+                maxLength="40"
+                onChange={changeName}
+                required
+                value={name}
+            />
+            <span className="popup__text-error" id="profile_name-error"/>
+            <input
+                type="text"
+                name="profile_job"
+                className="popup__text"
+                id="profile_job"
+                placeholder="Профессиональная деятельность"
+                minLength="2"
+                maxLength="200"
+                onChange={changeDescription}
+                required
+                value={description}
+            />
+            <span className="popup__text-error" id="profile_job-error"/>
+        </PopupWithForm>
     )
 }
 
