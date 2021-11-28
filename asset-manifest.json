@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/mesto-react/static/css/main.58899801.chunk.css",
+    "main.js": "/mesto-react/static/js/main.425a5a66.chunk.js",
+    "main.js.map": "/mesto-react/static/js/main.425a5a66.chunk.js.map",
+    "runtime-main.js": "/mesto-react/static/js/runtime-main.18ccd7a6.js",
+    "runtime-main.js.map": "/mesto-react/static/js/runtime-main.18ccd7a6.js.map",
+    "static/js/2.bce09417.chunk.js": "/mesto-react/static/js/2.bce09417.chunk.js",
+    "static/js/2.bce09417.chunk.js.map": "/mesto-react/static/js/2.bce09417.chunk.js.map",
+    "static/js/3.8f549c3c.chunk.js": "/mesto-react/static/js/3.8f549c3c.chunk.js",
+    "static/js/3.8f549c3c.chunk.js.map": "/mesto-react/static/js/3.8f549c3c.chunk.js.map",
+    "index.html": "/mesto-react/index.html",
+    "static/css/main.58899801.chunk.css.map": "/mesto-react/static/css/main.58899801.chunk.css.map",
+    "static/js/2.bce09417.chunk.js.LICENSE.txt": "/mesto-react/static/js/2.bce09417.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/mesto-react/static/media/trashButton.cbc09a89.svg",
+    "static/media/logo.03b78ada.svg": "/mesto-react/static/media/logo.03b78ada.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.18ccd7a6.js",
+    "static/js/2.bce09417.chunk.js",
+    "static/css/main.58899801.chunk.css",
+    "static/js/main.425a5a66.chunk.js"
+  ]
+}
