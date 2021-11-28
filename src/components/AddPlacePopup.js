@@ -36,6 +36,7 @@ function AddPlacePopup(props) {
             title={'Новое место'}
             name={'add'}
             onSubmit={handleSubmit}
+            onOverlayClick={props.onOverlayClick}
             >
             <input
                 type="text"

@@ -111,6 +111,27 @@ function App() {
     }
 
 
+    function closeOverlayClick(evt) {
+        if (evt.target.classList.contains('popup_opened')) {
+            closeAllPopups()
+        }
+    }
+
+    React.useEffect(() => {
+        if (isAddPlacePopupOpen || isEditProfilePopupOpen || isEditAvatarPopupOpen || selectedCard) {
+            function handleEscape(evt) {
+                if (evt.key === "Escape") {
+                    closeAllPopups()
+                }
+            }
+
+            document.addEventListener('keydown', handleEscape)
+
+            return () => {
+                document.removeEventListener('keydown', handleEscape)
+            }
+        }
+    }, [isAddPlacePopupOpen, isEditProfilePopupOpen, isEditAvatarPopupOpen, selectedCard])
 
     function closeAllPopups() {
         setIsEditAvatarPopupOpen(false)
@@ -138,11 +159,24 @@ function App() {
           <ImagePopup
           card={selectedCard}
           onClose={closeAllPopups}
+          onOverlayClick={closeOverlayClick}
           />
 
-          <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onSubmit={handleUpdateUser}/>
-          <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onSubmit={handleAvatarUpdate}/>
-          <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onSubmit={handleAddPlaceSubmit}/>
+          <EditProfilePopup
+              isOpen={isEditProfilePopupOpen}
+              onClose={closeAllPopups}
+              onSubmit={handleUpdateUser}
+              onOverlayClick={closeOverlayClick}/>
+          <EditAvatarPopup
+              isOpen={isEditAvatarPopupOpen}
+              onClose={closeAllPopups}
+              onSubmit={handleAvatarUpdate}
+              onOverlayClick={closeOverlayClick}/>
+          <AddPlacePopup
+              isOpen={isAddPlacePopupOpen}
+              onClose={closeAllPopups}
+              onSubmit={handleAddPlaceSubmit}
+              onOverlayClick={closeOverlayClick}/>
       </>
       </div>
       </CurrentUserContext.Provider>

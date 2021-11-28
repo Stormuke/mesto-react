@@ -24,6 +24,7 @@ function EditAvatarPopup(props) {
             title={'Обновить аватар'}
             name={'avatar'}
             onSubmit={handleSubmit}
+            onOverlayClick={props.onOverlayClick}
             >
             <input
                 ref={avatarRef}

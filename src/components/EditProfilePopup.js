@@ -39,6 +39,7 @@ function EditProfilePopup(props) {
             form={'edit_profile'}
             title={'Редактировать профиль'}
             name={'edit'}
+            onOverlayClick={props.onOverlayClick}
             >
             <input
                 type="text"
